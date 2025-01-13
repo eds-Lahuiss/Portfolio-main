@@ -17,9 +17,23 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #ffffff;
-  background-color: #121212;
-  line-height: 1.6;
+  background: radial-gradient(circle at center, #121212, #000);
+  position: relative; /* Nécessaire pour positionner les éléments enfants */
+  height: 100%;
 }
+
+.background-interactive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  overflow: hidden;
+  z-index: -1; /* Derrière tout le contenu */
+}
+
+
 
   header {
     background-color: white;
@@ -29,22 +43,6 @@ body {
     align-items: center; /* Centre verticalement les éléments */
   }
 
-  :root{
-    --x: 0;
-    --y: 0;
-  }
-
-  article {
-    color: white;
-    background: radial-gradient(circle at var(--x) var(--y), #AA076B, #61045F);
-    box-shadow: 0 0 0 #61045F inset, 0 4px 8px rgba(50, 0, 0, 0.2), 0 2px 4px rgba(128, 0, 0, 0.3);
-  }
-
-  .article > * 
-  {
-    z-index: 1;
-      pointer-events: none;
-  }
   
   .container {
     width: 100%; /* Assure que le container occupe toute la largeur */
@@ -142,22 +140,6 @@ body {
   height: 100vh;
   text-align: center;
   position: relative;
-  background: repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.03) 0px,
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px,
-      transparent 10px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(255, 255, 255, 0.03) 0px,
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px,
-      transparent 10px
-    );
-  background-size: 20px 20px;
-  filter: blur(0.5px);
   padding: 20px;
 }
 
@@ -392,8 +374,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Les cartes prennent plus de largeur */
   gap: 80px; /* Réduit légèrement l'espacement entre les cartes */
-  width: 60%; /* Augmente la largeur globale du conteneur */
-  height: auto; /* Laisse le conteneur s'adapter automatiquement */
+  width: 100%; /* Augmente la largeur globale du conteneur */
+  height: 50%; /* Laisse le conteneur s'adapter automatiquement */
   margin-right: 60px; /* Ajuste l'espacement avec la colonne des barres */
 }
 
@@ -453,26 +435,21 @@ body {
 /* Conteneur des barres de progression */
 .skills-container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Aligne à gauche */
-  justify-content: center;
-  gap: 100px; /* Plus d'espace entre les barres */
-  width: 50%; /* Augmente la largeur du conteneur des barres */
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 /* Style des compétences */
 .skill {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100%; /* Ajuste la largeur globale */
-  margin: 0 auto; /* Centre horizontalement */
+  width: 150px; /* Réduire la taille des cartes */
+  margin: 10px;
+  text-align: center;
 }
 
 /* Image des compétences */
 .skill img {
-  width: 100px; /* Augmente la taille des icônes */
-  height: 100px; /* Correspond à la largeur */
+  width: 80px; /* Réduire la taille des icônes */
+  height: 80px; /* Correspond à la largeur */
   border-radius: 5px;
   object-fit: contain;
 }
@@ -480,11 +457,12 @@ body {
 /* Barre de progression */
 .progress-bar {
   background-color: #ccc; /* Couleur de la barre de fond */
-  flex-grow: 1; /* La barre prend la largeur disponible */
-  height: 50px; /* Barres plus hautes */
-  border-radius: 25px;
+  width: 100%; /* La barre prend toute la largeur de la carte */
+  height: 20px; /* Barres plus petites */
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
+  margin-top: 10px; /* Espacement au-dessus de la barre */
 }
 
 .progress {
@@ -495,13 +473,25 @@ body {
 }
 
 .percentage {
-  font-size: 36px; /* Texte de pourcentage plus grand */
-  font-weight: bold;
-  color: white;
-  width: 50px;
   text-align: center;
+  margin-top: 5px; /* Espace entre la barre et le texte */
+  font-size: 14px; /* Ajustez la taille de la police selon vos besoins */
 }
 
+.skill-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-card {
+  flex: 1 1 auto;
+  margin: 10px;
+  max-width: 200px; /* Ajustez cette valeur selon vos besoins */
+}
 
 /* Section globale pour alignement */
 .contact-section {
