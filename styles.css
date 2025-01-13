@@ -34,10 +34,10 @@ body {
     --y: 0;
   }
 
-  article{
+  article {
     color: white;
-    background: radial-gradient(circle at var(--x) var(--y) , #AA076B, #61045F);
-    box-shadow:  0 0 0 #61045F inset,0 4px 8px rgba(50,0,0,0.2), 0 2px 4px rgba(128,0,0,0.3);
+    background: radial-gradient(circle at var(--x) var(--y), #AA076B, #61045F);
+    box-shadow: 0 0 0 #61045F inset, 0 4px 8px rgba(50, 0, 0, 0.2), 0 2px 4px rgba(128, 0, 0, 0.3);
   }
 
   .article > * 
@@ -831,3 +831,13 @@ background-color: Gainsboro;
 h5{
   color: dimgray;
 }
+
+document.querySelector('article').onmousemove = (e) => {
+  requestAnimationFrame(() => {
+    const x = e.pageX - e.target.offsetLeft;
+    const y = e.pageY - e.target.offsetTop;
+
+    e.target.style.setProperty('--x', `${x}px`);
+    e.target.style.setProperty('--y', `${y}px`);
+  });
+};

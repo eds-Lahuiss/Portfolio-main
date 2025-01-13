@@ -21,8 +21,8 @@
     <a href="https://www.youtube.com/@sku5217" target="_blank" class="nav-button" title="Visiter ma chaîne YouTube">▶</a>
   </div>
 </header>
-<article><body>
-  <main>
+<body>
+  <article> <main>
     <section class="hero-about">
       <div class="content-wrapper">
         <div class="text-content">
@@ -216,17 +216,9 @@
     </div>
   </div>
 </section>
-  </main>
-  <script>document.querySelector('article').onmousemove = (e) => {
-    requestAnimationFrame(() => {
-      const x = e.pageX - e.target.offsetLeft;
-      const y = e.pageY - e.target.offsetTop;
-  
-      e.target.style.setProperty('--x', `${x}px`);
-      e.target.style.setProperty('--y', `${y}px`);
-    });
-  };</script>
-</body></article>
+  </main></article>
+  <script src="script.js"></script>
+</body>
 <footer>
   <h5>Crée lors de l'année d'étude 2024-2025</h5>
 </footer>
