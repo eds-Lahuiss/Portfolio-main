@@ -10,7 +10,7 @@
 <body>
   <header>
     <div class="container">
-      <div class="logo">LAHUISS</div>
+      <div class="logo"><img src="images/logo.png" alt="logo lahuiss" /></div>
       <ul class="nav-links">
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -39,39 +39,34 @@
         <div class="projects-container">
           <div class="row">
             <div class="numbers-column">
-              <div class="circle">1</div>
             </div>
             <div class="images-column">
               <div class="image-wrapper">
                 <div class="placeholder">
                   <!-- Contenu par défaut (image) -->
                   <div class="first-content">
-                    <img src="chemin-de-l-image1.jpg" alt="Image Projet 1" />
+                    <img src="images/kombinul.png" alt="Image Projet 1" />
                   </div>
                   <!-- Contenu alternatif (texte) -->
                   <div class="second-content">
-                    <h2>Nom du Projet :</h2>
-                    <p>Ceci est une description détaillée du projet.</p>
+                    <p>KOMBINUL EST UN PROJET VIDÉO FAIT DANS LE CADRE DE LA PREMIÈRE ANNÉE D'ÉTUDE QUI AVAIT POUR PRINCIPE DE PARODIER LE CONCEPT D'INTERVIEW DE KONBINI</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="numbers-column">
-              <div class="circle">2</div>
             </div>
             <div class="images-column">
               <div class="image-wrapper">
                 <div class="placeholder">
                   <!-- Contenu par défaut (image) -->
                   <div class="first-content">
-                    <img src="chemin-de-l-image2.jpg" alt="Image Projet 2" />
+                    <img src="images/cgw.png" alt="Image Projet 2" />
                   </div>
                   <!-- Contenu alternatif (texte) -->
                   <div class="second-content">
-                    <h2>Nom du Projet :</h2>
-                    <p>Ceci est une description détaillée du projet.</p>
+                    <p>LA CORSICA GAMES WEEK ÉTAIT UN ÉVÈNEMENT AUQUEL DE NOUS DEVIONS CRÉER TOUTES LA COMMUNICATION, LORS DE MA PREMIÈRE ANNÉE D'ETUDES EN BUT MMI.</p>
                   </div>
                 </div>
               </div>
@@ -217,37 +212,6 @@
   <footer>
     <h5>Crée lors de l'année d'étude 2024-2025</h5>
   </footer>
-  <script>
-    const background = document.createElement("div");
-  background.classList.add("background-interactive");
-  document.body.appendChild(background);
 
-  function createParticle() {
-    const particle = document.createElement("div");
-    particle.classList.add("particle");
-
-    // Positionnement aléatoire
-    particle.style.left = `${Math.random() * 100}vw`;
-    particle.style.top = `${Math.random() * 100}vh`;
-
-    // Taille aléatoire
-    const size = Math.random() * 5 + 5; // Entre 5px et 10px
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-
-    // Vitesse d'animation aléatoire
-    particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
-
-    // Suppression après animation
-    particle.addEventListener("animationend", () => {
-      particle.remove();
-    });
-
-    background.appendChild(particle);
-  }
-
-  // Générer des particules toutes les 300ms
-  setInterval(createParticle, 300);
-  </script>
 </body>
 </html>
