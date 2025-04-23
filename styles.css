@@ -407,28 +407,6 @@ header {
   text-decoration: underline;
 }
 
-.skills-card p {
-  margin: 15px 0;
-  font-size: 2rem; /* Responsive text size */
-  font-weight: 850;
-  color: #262323;
-  line-height: 1.5;
-}
-
-.skills-layout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.skills-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-}
-
 .skills-card {
   background-color: #fff;
   border-radius: 10px;
@@ -437,28 +415,36 @@ header {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 20px;
+  padding: 15px; /* Réduction du padding */
   margin: 10px;
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
+  flex: 1 1 calc(25% - 20px); /* Réduit la largeur des cartes */
+  max-width: calc(25% - 20px); /* Réduit la largeur maximale */
 }
 
 .skills-card img {
   width: 100%; /* Remplit la largeur de la carte */
-  height: 200px; /* Hauteur fixe pour uniformiser les cartes */
+  height: 150px; /* Réduction de la hauteur des images */
   object-fit: cover; /* Maintient le ratio d'aspect */
   border-radius: 10px; /* Coins arrondis */
   margin: 0 auto; /* Centre les images horizontalement */
 }
 
-/* Boutons "More" */
+.skills-card p {
+  margin: 10px 0; /* Réduction de l'espacement vertical */
+  font-size: 1.2rem; /* Réduction de la taille du texte */
+  font-weight: 700; /* Maintient un texte lisible */
+  color: #262323;
+  line-height: 1.4;
+}
+
 .skills-card button {
   background-color: #333333; /* Fond gris foncé pour un meilleur contraste */
   color: #ffffff; /* Texte blanc */
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 8px; /* Réduction du padding */
   cursor: pointer;
+  font-size: 0.9rem; /* Réduction de la taille du texte */
   font-weight: bold;
   transition: background-color 0.3s ease;
   align-self: center;
@@ -466,6 +452,20 @@ header {
 
 .skills-card button:hover {
   background-color: #1a1a1a; /* Fond encore plus foncé au survol */
+}
+
+.skills-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Réduction de l'espace entre les cartes */
+}
+
+.skills-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 
 .skills-container {
