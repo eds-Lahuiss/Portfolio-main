@@ -161,19 +161,21 @@ header {
 
 .hero-about .text-content .objective {
   font-size: 1.2rem;
+  line-height: 1.5; /* Définit une hauteur de ligne suffisante */
   font-family: "Anton", serif;
   font-weight: 200;
   margin-bottom: 20px;
 }
 
+/* Bouton "Découvrez mon travail ↓" */
 .hero-about .cta-button {
   display: inline-block;
   padding: 15px 30px;
   font-size: 1rem;
   font-family: "Archivo Black", serif;
   font-weight: 400;
-  color: #ffffff;
-  background-color: #007bff;
+  color: #ffffff; /* Texte blanc pour un meilleur contraste */
+  background-color: #0056b3; /* Bleu plus foncé pour un meilleur contraste */
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -181,7 +183,7 @@ header {
 }
 
 .hero-about .cta-button:hover {
-  background-color: #0056b3;
+  background-color: #003d80; /* Bleu encore plus foncé au survol */
 }
 
 .hero-about .image-container {
@@ -214,6 +216,7 @@ header {
   padding: 50px 20px;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -392,6 +395,8 @@ header {
   margin-bottom: 20px; /* More space below the title */
   color: #ffffff;
 }
+.contact-section h2,
+.projects-section h2,
 .skills-section h2 {
   font-size: 64px; /* Increase the title size */
   margin-bottom: 65px; /* More space below the title */
@@ -434,16 +439,10 @@ header {
   max-width: calc(33.333% - 20px);
 }
 
-.skills-card img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px;
-  margin: 0 auto; /* Center the image */
-}
-
+/* Boutons "More" */
 .skills-card button {
-  background-color: grey;
-  color: #fff;
+  background-color: #333333; /* Fond gris foncé pour un meilleur contraste */
+  color: #ffffff; /* Texte blanc */
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -454,13 +453,21 @@ header {
 }
 
 .skills-card button:hover {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a; /* Fond encore plus foncé au survol */
+}
+
+.skills-card img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  margin: 0 auto; /* Center the image */
 }
 
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 5%;
   align-items: center;
 }
 
@@ -519,11 +526,13 @@ header {
 .contact-section {
   margin-top: 1%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 90vh; 
   width: 100%;
   color: white;
+  margin-bottom: 5%;
 }
 
 .contact-section .background {
@@ -843,9 +852,10 @@ textarea {
   resize: none; /* Empêche le redimensionnement */
 }
 
+/* Bouton "Submit" */
 button {
-  background-color: #00ca4e; /* Bouton vert */
-  color: white;
+  background-color: #0056b3; /* Bleu plus foncé pour un meilleur contraste */
+  color: #ffffff; /* Texte blanc */
   font-weight: bold;
   padding: 10px;
   border: none;
@@ -856,47 +866,91 @@ button {
 }
 
 button:hover {
-  background-color: #019c3d;
+  background-color: #003d80; /* Bleu encore plus foncé au survol */
 }
 
+/* Footer */
 footer {
-  background-color: Gainsboro;
-  padding: 5px 40px;
-  display: flex; /* Alignement similaire au header */
-  position: relative; /* Assure que le footer apparaît en bas naturellement */
-  margin-top: auto; /* Ajoute de l'espace si nécessaire pour pousser le footer en bas */
-  justify-content: center;
+  background-color: #1a1a1a; /* Couleur de fond sombre */
+  color: #ffffff; /* Texte blanc */
+  padding: 20px 40px; /* Ajoute de l'espace autour */
+  text-align: center;
+  font-size: 1rem; /* Taille de police relative */
+  line-height: 1.6; /* Améliore la lisibilité */
+  display: flex; /* Active Flexbox */
+  flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Centre verticalement les éléments */
+  gap: 20px; /* Espace entre les éléments */
 }
 
-h5 {
-  color: dimgray;
+.footer-title {
+  font-size: 1.2rem; /* Taille relative pour le titre */
+  font-weight: bold;
+  margin: 0 0 10px 0; /* Ajoute un espacement en bas */
 }
 
-@media (max-width: 768px) {
-  .contact-section {
-    flex-direction: column;
-    height: auto;
-    margin-bottom: 20px; /* Add gap between contact section and footer */
-  }
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Aligne les liens horizontalement */
+  gap: 20px; /* Espace entre les liens */
+}
 
-  .contact-section .background {
-    width: 90%;
-    height: auto;
-    padding: 20px;
-  }
+.footer-links li {
+  display: inline;
+}
 
-  .card {
-    width: 100%; /* Ensure responsiveness on smaller screens */
-    height: auto; /* Adjust height for responsiveness */
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
-  }
+.footer-links a {
+  display: inline-block; /* Permet d'ajouter du padding */
+  width: 44px; /* Taille minimale pour la surface cliquable */
+  height: 44px; /* Taille minimale pour la surface cliquable */
+  text-decoration: none;
+  border-radius: 5px; /* Coins arrondis */
+  transition: transform 0.3s ease; /* Animation au survol */
+}
 
-  .card-int {
-    border-radius: 15px; /* Adjust border radius for smaller screens */
-  }
+.footer-links a:hover {
+  transform: scale(1.1); /* Agrandit légèrement l'icône au survol */
+}
 
-  .hello {
-    font-size: 20px; /* Adjust font size for smaller screens */
-  }
+.social-icon {
+  width: 100%; /* L'icône occupe toute la surface cliquable */
+  height: 100%;
+  object-fit: contain; /* Maintient les proportions de l'icône */
+}
+
+footer p {
+  margin: 10px 0 0 0; /* Ajoute un espacement en haut */
+  font-size: 0.9rem; /* Taille relative pour les mentions légales */
+  color: #aaaaaa; /* Couleur atténuée pour les mentions légales */
+}
+
+/* Section Projets - Agrandir la surface cliquable des liens */
+.projects-section a {
+  display: inline-block; /* Permet d'ajouter du padding */
+  padding: 8px 10px; /* Ajoute de l'espace cliquable autour du lien */
+  text-decoration: none; /* Assure que le style reste propre */
+}
+
+/* Section Compétences - Agrandir la surface cliquable des liens */
+.skills-card a {
+  display: inline-block; /* Permet d'ajouter du padding */
+  padding: 8px 10px; /* Ajoute de l'espace cliquable autour du lien */
+  text-decoration: none; /* Assure que le style reste propre */
+}
+
+/* Section Contact - Agrandir la surface cliquable des liens */
+.contact-section a {
+  display: inline-block; /* Permet d'ajouter du padding */
+  padding: 8px 10px; /* Ajoute de l'espace cliquable autour du lien */
+  text-decoration: none; /* Assure que le style reste propre */
+}
+
+/* Règle générale pour tous les liens interactifs */
+a {
+  display: inline-block; /* Permet d'ajouter du padding */
+  padding: 8px 10px; /* Ajoute de l'espace cliquable autour du lien */
+  text-decoration: none; /* Assure que le style reste propre */
 }
