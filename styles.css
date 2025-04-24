@@ -16,7 +16,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: #ffffff;
+  color: #fff;
   background: radial-gradient(circle at center, #121212, #000);
   position: relative; /* Nécessaire pour positionner les éléments enfants */
   height: 100%;
@@ -205,9 +205,9 @@ header {
 }
 
 .profile-photo {
-  width: 300px; /* Taille légèrement augmentée pour la photo de profil */
+  width: 300px; /* Taille fixe pour éviter les décalages */
   height: 300px;
-  object-fit: cover; /* Maintient le ratio d'aspect tout en remplissant le conteneur */
+  object-fit: cover; /* Maintient le ratio d'aspect */
   border-radius: 50%; /* Rond pour les photos de profil */
   border: 5px solid #ffffff; /* Bordure blanche */
   margin: 0 auto; /* Centre la photo horizontalement */
@@ -283,6 +283,15 @@ header {
 .placeholder img {
   width: 100%; /* Remplit la largeur du conteneur */
   height: 100%; /* Remplit la hauteur du conteneur */
+  object-fit: cover; /* Maintient le ratio d'aspect */
+  border-radius: 10px; /* Coins arrondis */
+  margin: 0 auto; /* Centre les images horizontalement */
+}
+
+.project-image {
+  width: 100%; /* Remplit la largeur du conteneur */
+  max-width: 600px; /* Taille maximale */
+  height: auto; /* Maintient le ratio d'aspect */
   object-fit: cover; /* Maintient le ratio d'aspect */
   border-radius: 10px; /* Coins arrondis */
   margin: 0 auto; /* Centre les images horizontalement */
