@@ -97,9 +97,8 @@ header {
 }
 
 .nav-button {
-  background-color: white;
-  border: 2px solid grey;
-  color: black;
+  background-color: #FF0000; /* Rouge utilisé par YouTube */
+  color: white;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -107,9 +106,8 @@ header {
 }
 
 .nav-button:hover {
-  background-color: lightcoral; /* Couleur de fond au survol */
+  background-color: #dd4e4e; /* Couleur de fond au survol */
   color: white; /* Couleur du texte au survol */
-  border-color: lightcoral; /* Bordure assortie au fond */
   transform: scale(1.2); /* Légère mise en avant du bouton */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
 }
@@ -363,6 +361,33 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%; /* S'adapte à la largeur du conteneur parent */
+  max-width: 800px; /* Correspond à la largeur maximale de l'image */
+  height: auto; /* S'ajuste automatiquement à la hauteur de l'image */
+  margin: 0 auto; /* Centre la div horizontalement */
+  border-radius: 15px; /* Coins arrondis pour correspondre au style de l'image */
+  overflow: hidden; /* Cache tout débordement */
+  background-color: #333; /* Fond gris foncé pour un contraste agréable */
+  padding: 20px; /* Ajoute un espace intérieur autour de l'image */
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); /* Ombre subtile pour un effet lumineux */
+}
+
+.image-wrapper img {
+  width: 100%; /* Remplit la largeur de la div */
+  height: auto; /* Maintient le ratio d'aspect */
+  object-fit: cover; /* Assure que l'image remplit le conteneur sans déformation */
+  border-radius: 10px; /* Coins arrondis pour l'image */
+}
+
+.image-wrapper .description {
+  margin-top: 20px; /* Espace entre l'image et le texte */
+  font-size: 1.2rem; /* Taille de police pour le texte */
+  font-weight: bold;
+  color: white; /* Texte blanc pour un bon contraste */
+  text-align: center; /* Centre le texte */
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour le texte */
+  padding: 10px; /* Ajoute un espace intérieur au texte */
+  border-radius: 10px; /* Coins arrondis pour le fond du texte */
 }
 
 @media (max-width: 768px) {
@@ -494,6 +519,15 @@ header {
 .skill img {
   width: 75px;
   max-height: 65px;
+}
+
+.skills-image {
+  width: 100%; /* Remplit la largeur de la carte */
+  max-width: 300px; /* Taille maximale */
+  height: auto; /* Maintient le ratio d'aspect */
+  object-fit: cover; /* Maintient le ratio d'aspect */
+  border-radius: 10px; /* Coins arrondis */
+  margin: 0 auto; /* Centre les images horizontalement */
 }
 
 @media (max-width: 768px) {
@@ -890,6 +924,26 @@ button:hover {
   background-color: #003d80; /* Bleu encore plus foncé au survol */
 }
 
+/* Bouton désactivé */
+button:disabled {
+  background-color: #cccccc; /* Gris clair */
+  cursor: not-allowed; /* Curseur interdit */
+}
+
+/* Bouton activé */
+button:not(:disabled) {
+  background-color: #0056b3; /* Couleur vive */
+  cursor: pointer; /* Curseur pointer */
+}
+
+/* Messages d'erreur */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: none; /* Caché par défaut */
+}
+
 /* Footer */
 footer {
   background-color: #1a1a1a; /* Couleur de fond sombre */
@@ -937,8 +991,8 @@ footer {
 }
 
 .social-icon {
-  width: 100%; /* L'icône occupe toute la surface cliquable */
-  height: 100%;
+  width: 44px; /* Taille fixe pour les icônes */
+  height: 44px;
   object-fit: contain; /* Maintient les proportions de l'icône */
 }
 
